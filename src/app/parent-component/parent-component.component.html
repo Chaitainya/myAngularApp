@@ -1,0 +1,12 @@
+<div>
+    <p>parent-component works!</p>
+    <div style="width: 40rem; height: 10rem; border: 1px solid #000; border-radius: .5rem;">
+        <button (click)="sendToChild();">Send to child</button>
+        <h1>{{ receivedMessage }}</h1>
+        <button (click)="sayHelloToChild();">Say Hello to world</button>
+        <button (click)="sayJustHello();">Say just hello</button>
+        <button type="button" (click)="sayHelloKid();">Say Hello Kid</button>
+    </div>
+</div>
+<!-- <app-child-component (sendMessageToParent)="messageFromChild($event);"></app-child-component> -->
+<app-child-component #helloWorld [messageFromParent]="sendMessageToChild" (sendMessageToParent)="messageFromChild();"></app-child-component>
